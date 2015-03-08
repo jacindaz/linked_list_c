@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/ypearson/Dropbox/code/c_code/linked_list"
+		}
+	],
+    "settings":
+    {
+          "sublimegdb_workingdir": "${folder:${project_path:run}}",
+          "sublimegdb_commandline": "gdb --interpreter=mi ./run"
+
+     }
+}
