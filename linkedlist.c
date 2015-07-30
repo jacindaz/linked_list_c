@@ -10,7 +10,7 @@ static inline int check_head(head_t* head)
 	return error;
 }
 
-node_t* 
+node_t*
 create_list(int id)
 {
 	head_t* head = (node_t*) malloc( sizeof (node_t) );
@@ -26,6 +26,7 @@ insert_node_at_start(int id, head_t **head)
 	p_new_node->next = *head;
 	p_new_node->id = id;
 	*head = p_new_node;
+	return 0;
 }
 
 int
@@ -41,6 +42,7 @@ insert_node_at_end(int id, head_t *head)
 		temp = temp->next;
 	}
 	temp->next = p_new_node;
+	return 0;
 }
 int
 insert_node_sorted(int id, head_t **head)
@@ -97,7 +99,7 @@ delete_node_at_end(head_t *head)
 		free(temp);
 	}
 	print_list(head);
-
+	return 0;
 }
 
 int
@@ -115,9 +117,9 @@ delete_node_at_start(head_t **head)
 		free(*head);
 		*head = 0;
 	}
-	
-	print_list(*head);
 
+	print_list(*head);
+	return 0;
 }
 int
 delete_node_by_id(head_t** head, int id)
@@ -149,6 +151,7 @@ delete_node_by_id(head_t** head, int id)
 	return 1;
 }
 
+int
 print_list(head_t *head)
 {
 	node_t* temp = head;
@@ -163,9 +166,10 @@ print_list(head_t *head)
 		printf("%d ", temp->id);
 	}
 	printf("]\n");
+	return 0;
 }
 
-int 
+int
 destroy_list(head_t **head)
 {
 	node_t* temp = *head;
@@ -184,5 +188,5 @@ destroy_list(head_t **head)
 	free(*head);
 	*head = 0;
 	print_list( *head );
-
+	return 0;
 }
